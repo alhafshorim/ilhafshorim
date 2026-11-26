@@ -1,42 +1,320 @@
+
+Loading older messages…
+User attachment
+جی، اب آپ کی اسکرین شاٹ سے مسئلہ سمجھ آ رہا ہے۔ آپ بالکل صحیح جگہ پر ہیں۔ 👍
+
+آپ کے index.html میں اس وقت جو کوڈ نظر آ رہا ہے، اس میں ٹیکنالوجی کے لوگوز موجود ہیں، مثلاً HTML5 کا لوگو۔ یہ آپ کی ذاتی پروفائل تصویر نہیں ہے۔
+
+ابھی کوڈ ڈیلیٹ یا تبدیل نہ کریں۔ پہلے یہ مراحل مکمل کریں۔
+
+مرحلہ 1: اپنی پروفائل تصویر کا کوڈ تلاش کریں
+آپ کے اسکرین شاٹ میں اوپر Search والا باکس کھلا ہوا ہے، جس میں img لکھا ہے۔
+
+اسی Search باکس پر کلک کریں۔
+
+img کو مٹا کر Dit.jpg لکھیں۔
+
+کی بورڈ پر Enter دبائیں یا Next پر کلک کریں۔
+
+اگر Dit.jpg کوڈ میں موجود ہے تو GitHub آپ کو اس جگہ لے جائے گا۔
+
+مرحلہ 2: اگر Dit.jpg نہ ملے
+Search باکس میں hero لکھ کر تلاش کریں۔ اس سے ہوم پیج کے مرکزی حصے سے متعلق کوڈ مل سکتا ہے۔
+
+اگر آپ کی تصویر کے لیے کوئی <img> ٹیگ موجود نہیں ہے، تو ممکن ہے ہوم پیج میں پروفائل تصویر شامل ہی نہ کی گئی ہو۔
+
+مرحلہ 3: مجھے اگلا اسکرین شاٹ بھیجیں
+Dit.jpg تلاش کرنے کے بعد جو نتیجہ سامنے آئے، اس کی تصویر مجھے بھیج دیں۔ اگر کوئی نتیجہ نہ ملے تو وہ بھی بتا دیں۔
+
+پھر میں آپ کو بالکل درست کوڈ اور جگہ بتاؤں گا جہاں تصویر شامل کرنی ہے، تاکہ آپ کی اپنی تصویر ہوم پیج پر نظر آئے اور باقی ڈیزائن خراب نہ ہو۔
+
+<!doctype html>
+<html lang="en">
+  <script>
+    (function () {
+      var theme = 'dark';
+      try {
+        var params = new URLSearchParams(window.location.search);
+        var fromLink = params.get('theme');
+        theme = (fromLink === 'light' || fromLink === 'dark')
+          ? fromLink
+          : (localStorage.getItem('awt-theme') || 'dark');
+        localStorage.setItem('awt-theme', theme);
+      } catch (e) { }
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.classList.toggle('theme-light', theme === 'light');
+    })();
+  </script>
+  <meta name="description"
+    content="Shorim Khan — Full-Stack Web Developer, Graphic Designer and CEO of Alhaf Weborix Technology.">
+  <title>Home | Alhaf Weborix Technology</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="home-page">
+<div class="snake-animation-overlay" aria-hidden="true">
+  <svg viewBox="0 0 1440 900" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="snakeGlow" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#12d9ff"/><stop offset="52%" stop-color="#4677ff"/><stop offset="100%" stop-color="#c44cff"/></linearGradient></defs>
+    <path class="snake-trail snake-trail-a" d="M-80 170 C 80 30, 120 340, 270 220 S 430 70, 520 250 S 680 440, 790 270 S 980 80, 1080 260 S 1280 470, 1510 280"/>
+    <path class="snake-trail snake-trail-b" d="M-100 690 C 80 540, 150 820, 320 680 S 520 500, 650 680 S 840 850, 970 660 S 1180 480, 1300 660 S 1430 780, 1530 630"/>
+    <circle class="snake-head" cx="0" cy="0" r="5"><animateMotion dur="24s" repeatCount="indefinite" path="M-80 170 C 80 30, 120 340, 270 220 S 430 70, 520 250 S 680 440, 790 270 S 980 80, 1080 260 S 1280 470, 1510 280"/></circle>
+  </svg>
+</div>
+
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-logo-slot"
+        title="Add your company logo"><span>＋</span></span><span><b>Alhaf Weborix<br>Technology</b><small>Innovate ·
+          Build · Grow</small></span></a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav class="main-nav">
+      <a class="active" href="index.html">Home</a><a href="about.html">About</a><a href="projects.html">Projects</a><a
+        href="certificates.html">Certificates</a><a href="cv.html">My CV</a><a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions"><button class="theme-toggle" type="button">☀ Light</button><a
+        class="button button-small" href="contact.html">Let's Talk ↗</a></div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-copy">
+        <div class="availability"><i></i><span>Available for Freelance & Full-Time</span></div>
+        <p class="eyebrow">HELLO, WELCOME TO MY PORTFOLIO</p>
+        <h1>Hi, I'm <span class="gradient-text">Shorim Khan</span></h1>
+        <h2><span class="role-pill">CEO</span> &amp; Full-Stack Web Developer</h2>
+        <p class="lead">Building innovative digital solutions with modern technologies and creative designs.</p>
+        <div class="hero-actions"><a class="button" href="projects.html">Explore My Work <span>→</span></a><a
+            class="button button-outline" href="cv.html">View My CV ↓</a></div>
+        
+<div class="tech-strip">
+
+  <div class="tech-placeholder">
+    <span class="logo-circle">
+      <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5">
+    </span>
+    <small>HTML5</small>
+  </div>
+
+  <div class="tech-placeholder">
+    <span class="logo-circle">
+      <img src="https://cdn.simpleicons.org/css/1572B6" alt="CSS3">
+    </span>
+    <small>CSS3</small>
+  </div>
+
+  <div class="tech-placeholder">
+    <span class="logo-circle">
+      <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript">
+    </span>
+    <small>JavaScript</small>
+  </div>
+
+  <div class="tech-placeholder">
+    <span class="logo-circle">
+      <img src="https://cdn.simpleicons.org/php/777BB4" alt="PHP">
+    </span>
+    <small>PHP</small>
+  </div>
+
+  <div class="tech-placeholder">
+    <span class="logo-circle">
+      <img src="https://cdn.simpleicons.org/react/61DAFB" alt="React">
+    </span>
+    <small>React</small>
+  </div>
+
+  <div class="tech-placeholder">
+    <span class="logo-circle">
+      <img src="https://cdn.simpleicons.org/python/3776AB" alt="Python">
+    </span>
+    <small>Python</small>
+  </div>
+  <div class="tech-placeholder">
+    <span class="logo-circle">
+      <img src="https://cdn.simpleicons.org/python/3776AB" alt="Python">
+    </span>
+    <small>Python</small>
+  </div>
+
+</div>
+
+        <p class="asset-note">Add your official technology logo images in the logo slots when ready.</p>
+      </div>
+      <div class="hero-art">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="globe" aria-label="Animated globe">
+          <img src="assets/image/globe.png" alt="Alhaf Weborix Technology Global Network" class="globe-img">
+        </div>
+        <div class="floating-card"><b>Full-Stack Developer</b>
+          <div class="skill-cycle" id="skillCycle">Web Development</div><small>Creative digital solutions</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="metrics container">
+      <div class="metric"><span class="metric-icon">🎓</span>
+        <div><strong>8+</strong><small>Professional Courses</small></div>
+      </div>
+      <div class="metric"><span class="metric-icon">💼</span>
+        <div><strong>5+</strong><small>Real Projects</small></div>
+      </div>
+      <div class="metric"><span class="metric-icon">🏆</span>
+        <div><strong>1st</strong><small>Position in G.D.</small></div>
+      </div>
+      <div class="metric"><span class="metric-icon">⭐</span>
+        <div><strong>100%</strong><small>Dedication</small></div>
+      </div>
+      <blockquote><span>“</span>
+        <p>Turning Ideas into Reality<br>with Technology</p><cite>— Shorim Khan —</cite>
+      </blockquote>
+    </section>
+
+    <section class="home-links container">
+      <a class="feature-card" href="about.html"><span class="feature-icon">◉</span>
+        <h3>About Me</h3>
+        <p>My journey, skills and professional background.</p><b>Know More →</b>
+      </a>
+      <a class="feature-card" href="projects.html"><span class="feature-icon">⌘</span>
+        <h3>My Projects</h3>
+        <p>Explore my web development and design work.</p><b>View Projects →</b>
+      </a>
+      <a class="feature-card" href="certificates.html"><span class="feature-icon">✧</span>
+        <h3>Certificates</h3>
+        <p>Courses, training and achievements.</p><b>View Certificates →</b>
+      </a>
+      <a class="feature-card" href="cv.html"><span class="feature-icon">▤</span>
+        <h3>My CV / Resume</h3>
+        <p>Review my professional profile and experience.</p><b>View CV →</b>
+      </a>
+    </section>
+
+    <section class="section-block container">
+      <div class="section-heading">
+        <p class="eyebrow">MY TOOLKIT</p>
+        <h2>Technologies & Creative Tools</h2>
+        <p>Dedicated logo slots — add your preferred image files when ready.</p>
+      </div>
+      <div class="logo-grid">
+        <div class="logo-slot">
+          <div class="logo-circle large">HTML</div><b>HTML5</b>
+        </div>
+        <div class="logo-slot">
+          <div class="logo-circle large">CSS</div><b>CSS3</b>
+        </div>
+        <div class="logo-slot">
+          <div class="logo-circle large">JS</div><b>JavaScript</b>
+        </div>
+        <div class="logo-slot">
+          <div class="logo-circle large">PHP</div><b>PHP</b>
+        </div>
+        <div class="logo-slot">
+          <div class="logo-circle large">R</div><b>React</b>
+        </div>
+        <div class="logo-slot">
+          <div class="logo-circle large">Py</div><b>Python</b>
+        </div>
+        <div class="logo-slot">
+          <div class="logo-circle large">L</div><b>Laravel</b>
+        </div>
+        <div class="logo-slot">
+          <div class="logo-circle large">Ps</div><b>Photoshop</b>
+        </div>
+        <div class="logo-slot">
+          <div class="logo-circle large">Ai</div><b>Illustrator</b>
+        </div>
+        <div class="logo-slot">
+          <div class="logo-circle large">C</div><b>Canva</b>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-main container">
+      <div><a class="brand footer-brand" href="index.html"><span class="brand-logo-slot"
+            title="Add your company logo"><span>＋</span></span><span><b>Alhaf Weborix<br>Technology</b><small>Innovate ·
+              Build · Grow</small></span></a>
+        <p>Digital solutions through technology, creativity and innovation.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4><a href="about.html">About</a><a href="projects.html">Projects</a><a
+          href="certificates.html">Certificates</a><a href="cv.html">My CV</a>
+      </div>
+      <div>
+        <h4>Explore</h4><a href="contact.html">Contact</a><a href="mailto:alhafshorim@gmail.com">Email</a><a href="#"
+          class="whatsapp-link">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom container"><span>© <span id="year"></span> Alhaf Weborix Technology. All rights
+        reserved.</span><span>Designed &amp; developed by Shorim Khan</span></div>
+  </footer>
+  <script src="config.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
+वहाँ पे ऐसा कर लोगे ये कोड ठीक कर लो कि मेरे index.html का कोड है और मुझे वापस भेज दो, मैं कॉपी पेस्ट कर लूँ। यहाँ पे पेस्ट करता हूँ, ठीक है
+جی بالکل! میں نے آپ کے index.html کوڈ میں ضروری اصلاحات کر دی ہیں۔ آپ نیچے دیا گیا مکمل کوڈ کاپی کرکے GitHub کے index.html میں پیسٹ کر سکتے ہیں۔
+
+اہم اصلاحات:
+
+HTML کے شروع میں غائب <head> ٹیگ درست کیا ہے۔
+
+CSS کا راستہ style.css رکھا ہے، کیونکہ آپ کی اسکرین شاٹ میں CSS فائل root میں ہے۔
+
+گلوب کا راستہ image/globe.png کیا ہے، کیونکہ آپ کا فولڈر image ہے۔
+
+JavaScript کے راستے config.js اور main.js برقرار رکھے ہیں۔
+
+ٹیکنالوجی کے لوگوز میں دو بار آنے والا Python ہٹا دیا ہے۔
+
+موجودہ ڈیزائن، نیویگیشن اور Snake Animation برقرار رکھی ہے۔
+
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Shorim Khan — Full-Stack Web Developer, Graphic Designer and CEO of Alhaf Weborix Technology.">
-  <meta name="theme-color" content="#080b18">
+
+  <meta name="description"
+    content="Shorim Khan — Full-Stack Web Developer, Graphic Designer and CEO of Alhaf Weborix Technology.">
 
   <title>Home | Alhaf Weborix Technology</title>
 
   <script>
     (function () {
       var theme = 'dark';
+
       try {
-        var params = new URLSearchParams(location.search);
-        var requested = params.get('theme');
-        theme = requested === 'light' || requested === 'dark'
-          ? requested
-          : localStorage.getItem('awt-theme') || 'dark';
+        var params = new URLSearchParams(window.location.search);
+        var fromLink = params.get('theme');
+
+        theme = (fromLink === 'light' || fromLink === 'dark')
+          ? fromLink
+          : (localStorage.getItem('awt-theme') || 'dark');
+
         localStorage.setItem('awt-theme', theme);
       } catch (e) {}
 
       document.documentElement.setAttribute('data-theme', theme);
       document.documentElement.classList.toggle(
-        'theme-light', theme === 'light'
+        'theme-light',
+        theme === 'light'
       );
     })();
   </script>
 
+  <!-- CSS file is in the repository root -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="home-page">
 
-  <!-- Animated background -->
+  <!-- Animated snake background -->
   <div class="snake-animation-overlay" aria-hidden="true">
     <svg viewBox="0 0 1440 900"
-         preserveAspectRatio="none"
-         xmlns="http://www.w3.org/2000/svg">
+      preserveAspectRatio="none"
+      xmlns="http://www.w3.org/2000/svg">
+
       <defs>
         <linearGradient id="snakeGlow" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stop-color="#12d9ff"/>
@@ -46,17 +324,12 @@
       </defs>
 
       <path class="snake-trail snake-trail-a"
-        stroke="url(#snakeGlow)"
-        fill="none"
         d="M-80 170 C80 30 120 340 270 220 S430 70 520 250 S680 440 790 270 S980 80 1080 260 S1280 470 1510 280"/>
 
       <path class="snake-trail snake-trail-b"
-        stroke="url(#snakeGlow)"
-        fill="none"
         d="M-100 690 C80 540 150 820 320 680 S520 500 650 680 S840 850 970 660 S1180 480 1300 660 S1430 780 1530 630"/>
 
-      <circle class="snake-head" cx="0" cy="0" r="5"
-        fill="#12d9ff">
+      <circle class="snake-head" cx="0" cy="0" r="5">
         <animateMotion
           dur="24s"
           repeatCount="indefinite"
@@ -65,7 +338,7 @@
     </svg>
   </div>
 
-  <!-- Website header -->
+  <!-- Header -->
   <header class="site-header">
     <a class="brand" href="index.html">
       <span class="brand-logo-slot" title="Company logo">
@@ -99,7 +372,7 @@
 
   <main>
 
-    <!-- Home hero -->
+    <!-- Hero section -->
     <section class="hero container">
 
       <div class="hero-copy">
@@ -110,20 +383,9 @@
 
         <p class="eyebrow">HELLO, WELCOME TO MY PORTFOLIO</p>
 
-        <h1>
-          Hi, I'm
+        <h1>Hi, I'm
           <span class="gradient-text">Shorim Khan</span>
         </h1>
-
-        <!-- Profile picture -->
-        <img
-          src="image/Dit.jpg"
-          alt="Shorim Khan"
-          class="profile-photo"
-          width="160"
-          height="160"
-          style="display:block;width:160px;height:160px;max-width:100%;object-fit:cover;border-radius:50%;border:3px solid #12d9ff;margin:20px 0;"
-          onerror="this.onerror=null;this.alt='Profile image not found: image/Dit.jpg';this.style.display='none';">
 
         <h2>
           <span class="role-pill">CEO</span>
@@ -144,56 +406,65 @@
           </a>
         </div>
 
-        <!-- Technology icons -->
+        <!-- Technology logos -->
         <div class="tech-strip">
 
           <div class="tech-placeholder">
             <span class="logo-circle">
-              <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5">
+              <img src="https://cdn.simpleicons.org/html5/E34F26"
+                alt="HTML5">
             </span>
             <small>HTML5</small>
           </div>
 
           <div class="tech-placeholder">
             <span class="logo-circle">
-              <img src="https://cdn.simpleicons.org/css/1572B6" alt="CSS3">
+              <img src="https://cdn.simpleicons.org/css/1572B6"
+                alt="CSS3">
             </span>
             <small>CSS3</small>
           </div>
 
           <div class="tech-placeholder">
             <span class="logo-circle">
-              <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript">
+              <img src="https://cdn.simpleicons.org/javascript/F7DF1E"
+                alt="JavaScript">
             </span>
             <small>JavaScript</small>
           </div>
 
           <div class="tech-placeholder">
             <span class="logo-circle">
-              <img src="https://cdn.simpleicons.org/php/777BB4" alt="PHP">
+              <img src="https://cdn.simpleicons.org/php/777BB4"
+                alt="PHP">
             </span>
             <small>PHP</small>
           </div>
 
           <div class="tech-placeholder">
             <span class="logo-circle">
-              <img src="https://cdn.simpleicons.org/react/61DAFB" alt="React">
+              <img src="https://cdn.simpleicons.org/react/61DAFB"
+                alt="React">
             </span>
             <small>React</small>
           </div>
 
           <div class="tech-placeholder">
             <span class="logo-circle">
-              <img src="https://cdn.simpleicons.org/python/3776AB" alt="Python">
+              <img src="https://cdn.simpleicons.org/python/3776AB"
+                alt="Python">
             </span>
             <small>Python</small>
           </div>
 
         </div>
 
+        <p class="asset-note">
+          Technology logos are loaded from Simple Icons.
+        </p>
       </div>
 
-      <!-- Globe and floating card -->
+      <!-- Animated globe -->
       <div class="hero-art">
         <div class="orbit orbit-one"></div>
         <div class="orbit orbit-two"></div>
@@ -203,7 +474,7 @@
             src="image/globe.png"
             alt="Alhaf Weborix Technology Global Network"
             class="globe-img"
-            onerror="this.style.display='none';">
+            onerror="this.style.display='none'; this.parentElement.classList.add('globe-missing');">
         </div>
 
         <div class="floating-card">
@@ -217,7 +488,7 @@
 
     </section>
 
-    <!-- Portfolio statistics -->
+    <!-- Portfolio metrics -->
     <section class="metrics container">
 
       <div class="metric">
@@ -260,7 +531,7 @@
 
     </section>
 
-    <!-- Page links -->
+    <!-- Navigation cards -->
     <section class="home-links container">
 
       <a class="feature-card" href="about.html">
@@ -293,7 +564,7 @@
 
     </section>
 
-    <!-- Skills and tools -->
+    <!-- Technology toolkit -->
     <section class="section-block container">
 
       <div class="section-heading">
@@ -392,11 +663,7 @@
         <h4>Explore</h4>
         <a href="contact.html">Contact</a>
         <a href="mailto:alhafshorim@gmail.com">Email</a>
-        <a
-          href="https://wa.me/923078626828"
-          class="whatsapp-link"
-          target="_blank"
-          rel="noopener noreferrer">WhatsApp</a>
+        <a href="#" class="whatsapp-link">WhatsApp</a>
       </div>
 
     </div>
@@ -411,17 +678,9 @@
 
   </footer>
 
-  <!-- JavaScript files in repository root -->
+  <!-- JavaScript files are in the repository root -->
   <script src="config.js"></script>
   <script src="main.js"></script>
-
-  <script>
-    // Footer year fallback
-    var yearElement = document.getElementById('year');
-    if (yearElement) {
-      yearElement.textContent = new Date().getFullYear();
-    }
-  </script>
 
 </body>
 </html>
