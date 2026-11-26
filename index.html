@@ -1,49 +1,43 @@
+```html
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta name="description"
-    content="Shorim Khan — Full-Stack Web Developer, Graphic Designer and CEO of Alhaf Weborix Technology.">
+  <meta name="description" content="Shorim Khan — Full-Stack Web Developer, Graphic Designer and CEO of Alhaf Weborix Technology.">
+  <meta name="theme-color" content="#080b18">
 
   <title>Home | Alhaf Weborix Technology</title>
 
   <script>
     (function () {
       var theme = 'dark';
-
       try {
-        var params = new URLSearchParams(window.location.search);
-        var fromLink = params.get('theme');
-
-        theme = (fromLink === 'light' || fromLink === 'dark')
-          ? fromLink
-          : (localStorage.getItem('awt-theme') || 'dark');
-
+        var params = new URLSearchParams(location.search);
+        var requested = params.get('theme');
+        theme = requested === 'light' || requested === 'dark'
+          ? requested
+          : localStorage.getItem('awt-theme') || 'dark';
         localStorage.setItem('awt-theme', theme);
       } catch (e) {}
 
       document.documentElement.setAttribute('data-theme', theme);
       document.documentElement.classList.toggle(
-        'theme-light',
-        theme === 'light'
+        'theme-light', theme === 'light'
       );
     })();
   </script>
 
-  <!-- CSS file is in the repository root -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="home-page">
 
-  <!-- Animated snake background -->
+  <!-- Animated background -->
   <div class="snake-animation-overlay" aria-hidden="true">
     <svg viewBox="0 0 1440 900"
-      preserveAspectRatio="none"
-      xmlns="http://www.w3.org/2000/svg">
-
+         preserveAspectRatio="none"
+         xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="snakeGlow" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stop-color="#12d9ff"/>
@@ -53,12 +47,17 @@
       </defs>
 
       <path class="snake-trail snake-trail-a"
+        stroke="url(#snakeGlow)"
+        fill="none"
         d="M-80 170 C80 30 120 340 270 220 S430 70 520 250 S680 440 790 270 S980 80 1080 260 S1280 470 1510 280"/>
 
       <path class="snake-trail snake-trail-b"
+        stroke="url(#snakeGlow)"
+        fill="none"
         d="M-100 690 C80 540 150 820 320 680 S520 500 650 680 S840 850 970 660 S1180 480 1300 660 S1430 780 1530 630"/>
 
-      <circle class="snake-head" cx="0" cy="0" r="5">
+      <circle class="snake-head" cx="0" cy="0" r="5"
+        fill="#12d9ff">
         <animateMotion
           dur="24s"
           repeatCount="indefinite"
@@ -67,7 +66,7 @@
     </svg>
   </div>
 
-  <!-- Header -->
+  <!-- Website header -->
   <header class="site-header">
     <a class="brand" href="index.html">
       <span class="brand-logo-slot" title="Company logo">
@@ -101,7 +100,7 @@
 
   <main>
 
-    <!-- Hero section -->
+    <!-- Home hero -->
     <section class="hero container">
 
       <div class="hero-copy">
@@ -112,9 +111,20 @@
 
         <p class="eyebrow">HELLO, WELCOME TO MY PORTFOLIO</p>
 
-        <h1>Hi, I'm
+        <h1>
+          Hi, I'm
           <span class="gradient-text">Shorim Khan</span>
         </h1>
+
+        <!-- Profile picture -->
+        <img
+          src="image/Dit.jpg"
+          alt="Shorim Khan"
+          class="profile-photo"
+          width="160"
+          height="160"
+          style="display:block;width:160px;height:160px;max-width:100%;object-fit:cover;border-radius:50%;border:3px solid #12d9ff;margin:20px 0;"
+          onerror="this.onerror=null;this.alt='Profile image not found: image/Dit.jpg';this.style.display='none';">
 
         <h2>
           <span class="role-pill">CEO</span>
@@ -135,65 +145,56 @@
           </a>
         </div>
 
-        <!-- Technology logos -->
+        <!-- Technology icons -->
         <div class="tech-strip">
 
           <div class="tech-placeholder">
             <span class="logo-circle">
-              <img src="https://cdn.simpleicons.org/html5/E34F26"
-                alt="HTML5">
+              <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5">
             </span>
             <small>HTML5</small>
           </div>
 
           <div class="tech-placeholder">
             <span class="logo-circle">
-              <img src="https://cdn.simpleicons.org/css/1572B6"
-                alt="CSS3">
+              <img src="https://cdn.simpleicons.org/css/1572B6" alt="CSS3">
             </span>
             <small>CSS3</small>
           </div>
 
           <div class="tech-placeholder">
             <span class="logo-circle">
-              <img src="https://cdn.simpleicons.org/javascript/F7DF1E"
-                alt="JavaScript">
+              <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript">
             </span>
             <small>JavaScript</small>
           </div>
 
           <div class="tech-placeholder">
             <span class="logo-circle">
-              <img src="https://cdn.simpleicons.org/php/777BB4"
-                alt="PHP">
+              <img src="https://cdn.simpleicons.org/php/777BB4" alt="PHP">
             </span>
             <small>PHP</small>
           </div>
 
           <div class="tech-placeholder">
             <span class="logo-circle">
-              <img src="https://cdn.simpleicons.org/react/61DAFB"
-                alt="React">
+              <img src="https://cdn.simpleicons.org/react/61DAFB" alt="React">
             </span>
             <small>React</small>
           </div>
 
           <div class="tech-placeholder">
             <span class="logo-circle">
-              <img src="https://cdn.simpleicons.org/python/3776AB"
-                alt="Python">
+              <img src="https://cdn.simpleicons.org/python/3776AB" alt="Python">
             </span>
             <small>Python</small>
           </div>
 
         </div>
 
-        <p class="asset-note">
-          Technology logos are loaded from Simple Icons.
-        </p>
       </div>
 
-      <!-- Animated globe -->
+      <!-- Globe and floating card -->
       <div class="hero-art">
         <div class="orbit orbit-one"></div>
         <div class="orbit orbit-two"></div>
@@ -203,7 +204,7 @@
             src="image/globe.png"
             alt="Alhaf Weborix Technology Global Network"
             class="globe-img"
-            onerror="this.style.display='none'; this.parentElement.classList.add('globe-missing');">
+            onerror="this.style.display='none';">
         </div>
 
         <div class="floating-card">
@@ -217,7 +218,7 @@
 
     </section>
 
-    <!-- Portfolio metrics -->
+    <!-- Portfolio statistics -->
     <section class="metrics container">
 
       <div class="metric">
@@ -260,7 +261,7 @@
 
     </section>
 
-    <!-- Navigation cards -->
+    <!-- Page links -->
     <section class="home-links container">
 
       <a class="feature-card" href="about.html">
@@ -293,7 +294,7 @@
 
     </section>
 
-    <!-- Technology toolkit -->
+    <!-- Skills and tools -->
     <section class="section-block container">
 
       <div class="section-heading">
@@ -392,7 +393,11 @@
         <h4>Explore</h4>
         <a href="contact.html">Contact</a>
         <a href="mailto:alhafshorim@gmail.com">Email</a>
-        <a href="#" class="whatsapp-link">WhatsApp</a>
+        <a
+          href="https://wa.me/923078626828"
+          class="whatsapp-link"
+          target="_blank"
+          rel="noopener noreferrer">WhatsApp</a>
       </div>
 
     </div>
@@ -407,9 +412,18 @@
 
   </footer>
 
-  <!-- JavaScript files are in the repository root -->
+  <!-- JavaScript files in repository root -->
   <script src="config.js"></script>
   <script src="main.js"></script>
 
+  <script>
+    // Footer year fallback
+    var yearElement = document.getElementById('year');
+    if (yearElement) {
+      yearElement.textContent = new Date().getFullYear();
+    }
+  </script>
+
 </body>
 </html>
+```
