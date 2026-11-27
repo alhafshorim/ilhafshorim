@@ -1,9 +1,0 @@
-GitHub Pages تصاویر/Assets بحال کرنے کے لیے
-
-1) اس ZIP کو اپنے کمپیوٹر پر Extract کریں۔
-2) اس ZIP کے اندر موجود تمام فائلیں اور فولڈرز (index.html, about.html, projects.html, certificates.html, cv.html, contact.html, css, js, assets اور .nojekyll) اپنی GitHub repository کے ROOT میں اپلوڈ کریں۔
-3) اگر GitHub پر پہلے سے فائلیں موجود ہیں تو انہیں حذف نہ کریں۔ پہلے backup رکھیں اور صرف matching files/folders کو merge/replace کریں۔
-4) Commit changes کریں اور GitHub Pages build مکمل ہونے دیں۔
-5) ویب سائٹ پر Ctrl+Shift+R دباکر hard refresh کریں۔
-
-نوٹ: اصل HTML/CSS/JS اور assets کو غیر ضروری طور پر rewrite نہیں کیا گیا۔ یہ مکمل project backup ہے؛ .nojekyll فائل GitHub Pages کو فائلیں publish کرتے وقت Jekyll processing سے بچانے کے لیے شامل کی گئی ہے۔
